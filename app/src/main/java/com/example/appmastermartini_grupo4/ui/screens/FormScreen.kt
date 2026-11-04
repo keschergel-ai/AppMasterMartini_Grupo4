@@ -163,7 +163,7 @@ fun FormScreen() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        HorizontalDivider()
+        androidx.compose.material3.Divider()
 
         Spacer(modifier = Modifier.height(8.dp))
 
