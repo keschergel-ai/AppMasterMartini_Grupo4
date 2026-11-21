@@ -1,0 +1,116 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Fondo de pared oscura de pastelería elegante -->
+    <path
+        android:fillColor="#1E1E2C"
+        android:pathData="M0,0h200v200h-200z" />
+
+    <!-- Estantes superiores de madera en pared -->
+    <path
+        android:fillColor="#8D5B4C"
+        android:pathData="M20,40h160v6h-160zM20,65h160v6h-160z" />
+
+    <!-- Frascos e insumos de pastelería en estantes -->
+    <path
+        android:fillColor="#F4D06F"
+        android:pathData="M30,22h12v18h-12zM55,25h16v15h-16zM130,22h14v18h-14zM155,26h12v14h-12z" />
+    <path
+        android:fillColor="#FF8C42"
+        android:pathData="M80,20h15v20h-15zM105,24h14v16h-14z" />
+
+    <!-- Lámparas colgantes calurosas estilo café moderno -->
+    <path
+        android:fillColor="#FFD166"
+        android:pathData="M50,0v18h2v-18zM150,0v18h2v-18z" />
+    <path
+        android:fillColor="#FFB703"
+        android:pathData="M43,18l8,10l8,-10zM143,18l8,10l8,-10z" />
+
+    <!-- Mostrador frontal de ladrillo/madera -->
+    <path
+        android:fillColor="#3A2E39"
+        android:pathData="M10,130h180v70h-180z" />
+    <!-- Líneas decorativas de madera en mostrador -->
+    <path
+        android:fillColor="#523F4E"
+        android:pathData="M10,150h180v3h-180zM10,170h180v3h-180zM10,190h180v3h-180z" />
+
+    <!-- Vitrina de vidrio iluminada con marco dorado -->
+    <path
+        android:fillColor="#2B2D42"
+        android:pathData="M20,75h160v55h-160z" />
+    <!-- Vidrio transparente con resplandor -->
+    <path
+        android:fillColor="#3D5A80"
+        android:fillAlpha="0.6"
+        android:pathData="M24,79h152v47h-152z" />
+    <!-- Borde/Marco de la vitrina -->
+    <path
+        android:fillColor="#E0A96D"
+        android:pathData="M20,75h160v4h-160zM20,126h160v4h-160zM20,75h4v55h-4zM176,75h4v55h-4z" />
+
+    <!-- Bandeja interna de la vitrina -->
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M30,102h140v3h-140z" />
+
+    <!-- Pasteles y Postres en Vitrina - Nivel Superior -->
+    <!-- Pastel Torta de Chocolate -->
+    <path
+        android:fillColor="#4A2810"
+        android:pathData="M35,88h22v14h-22z" />
+    <path
+        android:fillColor="#E63946"
+        android:pathData="M43,84a3,3 0 1,0 6,0a3,3 0 1,0 -6,0" />
+
+    <!-- Croissant crujiente -->
+    <path
+        android:fillColor="#D4A373"
+        android:pathData="M72,92a8,8 0 0,1 16,0z" />
+
+    <!-- Cupcake con crema de fresa -->
+    <path
+        android:fillColor="#FAEDCD"
+        android:pathData="M105,94h14v8h-14z" />
+    <path
+        android:fillColor="#FFB5A7"
+        android:pathData="M103,89a9,7 0 0,1 18,0z" />
+
+    <!-- Pie / Tartaleta de Frutas -->
+    <path
+        android:fillColor="#E07A5F"
+        android:pathData="M138,92h25v10h-25z" />
+
+    <!-- Pasteles y Postres en Vitrina - Nivel Inferior -->
+    <!-- Torta helada Martini de varios pisos -->
+    <path
+        android:fillColor="#F4A261"
+        android:pathData="M35,112h28v14h-28z" />
+    <path
+        android:fillColor="#E9C46A"
+        android:pathData="M39,106h20v6h-20z" />
+
+    <!-- Rollos de canela / Muffins -->
+    <path
+        android:fillColor="#BC6C25"
+        android:pathData="M78,114a6,6 0 1,0 12,0a6,6 0 1,0 -12,0M95,114a6,6 0 1,0 12,0a6,6 0 1,0 -12,0" />
+
+    <!-- Postre Vaso Cheesecake -->
+    <path
+        android:fillColor="#F8F9FA"
+        android:fillAlpha="0.9"
+        android:pathData="M125,110h12v16h-12z" />
+    <path
+        android:fillColor="#E63946"
+        android:pathData="M125,110h12v4h-12z" />
+
+    <!-- Galletas de Chispas -->
+    <path
+        android:fillColor="#D4A373"
+        android:pathData="M150,118a5,5 0 1,0 10,0a5,5 0 1,0 -10,0M162,118a5,5 0 1,0 10,0a5,5 0 1,0 -10,0" />
+
+</vector>

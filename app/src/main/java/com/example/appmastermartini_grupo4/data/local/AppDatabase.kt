@@ -5,8 +5,14 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-// Instancia principal de la base de datos local Room
-@Database(entities = [ClientEntity::class], version = 1, exportSchema = false)
+/**
+ * [AppDatabase]
+ *
+ * 1. Qué hace: Configura y provee la instancia Singleton de la base de datos Room, incluyendo [.fallbackToDestructiveMigration()] para evitar crashes por cambios de esquema.
+ * 2. Conexiones: Expone [ClientDao] hacia [ClientRepository].
+ * 3. Rol en MVVM: Capa de Datos Local (Database Singleton).
+ */
+@Database(entities = [ClientEntity::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun clientDao(): ClientDao
@@ -20,9 +26,9 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "master_martini_db"
+                    "master_martini_database"
                 )
-                    .fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigration() // Evita cierre por cambios de versión en la BD
                     .build()
                 INSTANCE = instance
                 instance
