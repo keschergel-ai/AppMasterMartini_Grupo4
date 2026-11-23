@@ -45,23 +45,10 @@ fun LoginScreen(
     var passwordError by remember { mutableStateOf<String?>(null) }
 
     fun validateAndLogin() {
-        var isValid = true
+        emailError = LoginValidator.validateEmail(emailInput)
+        passwordError = LoginValidator.validatePassword(passwordInput)
 
-        if (emailInput.isBlank() || !emailInput.contains("@") || !emailInput.contains(".")) {
-            emailError = "Ingrese un correo institucional válido (ej: kevin@martini.cl)"
-            isValid = false
-        } else {
-            emailError = null
-        }
-
-        if (passwordInput.isBlank() || passwordInput.length < 4) {
-            passwordError = "La contraseña debe tener al menos 4 caracteres"
-            isValid = false
-        } else {
-            passwordError = null
-        }
-
-        if (isValid) {
+        if (LoginValidator.isValid(emailInput, passwordInput)) {
             onNavigateToHome()
         }
     }
@@ -191,5 +178,34 @@ fun LoginScreen(
                 )
             }
         }
+    }
+}
+
+/**
+ * [LoginValidator]
+ *
+ * 1. Qué hace: Helper reutilizable para validar credenciales de correo y contraseña en Login.
+ * 2. Conexiones: Utilizado por [LoginScreen] y evaluado en las pruebas unitarias.
+ * 3. Rol en MVVM: Lógica de validación de autenticación de usuario.
+ */
+object LoginValidator {
+    fun validateEmail(email: String): String? {
+        return if (email.isBlank() || !email.contains("@") || !email.contains(".")) {
+            "Ingrese un correo institucional válido (ej: kevin@martini.cl)"
+        } else {
+            null
+        }
+    }
+
+    fun validatePassword(password: String): String? {
+        return if (password.isBlank() || password.length < 4) {
+            "La contraseña debe tener al menos 4 caracteres"
+        } else {
+            null
+        }
+    }
+
+    fun isValid(email: String, password: String): Boolean {
+        return validateEmail(email) == null && validatePassword(password) == null
     }
 }

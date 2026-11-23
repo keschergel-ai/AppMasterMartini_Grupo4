@@ -1,6 +1,7 @@
 package com.example.appmastermartini_grupo4.ui.screens
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -309,6 +310,7 @@ fun FormScreen(
  * Función auxiliar para obtener la ubicación GPS mediante [LocationManager].
  * Si el GPS del emulador devuelve null o no está disponible, asigna automáticamente coordenadas válidas por defecto (Santiago, Chile) sin lanzar errores.
  */
+@SuppressLint("MissingPermission")
 @Suppress("DEPRECATION")
 private fun obtainGpsLocation(context: Context, viewModel: ClientViewModel, onStatus: (String) -> Unit) {
     val defaultLat = -33.4489

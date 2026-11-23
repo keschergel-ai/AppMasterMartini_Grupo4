@@ -21,6 +21,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.appmastermartini_grupo4.R
+import com.example.appmastermartini_grupo4.model.ClientModel
 import com.example.appmastermartini_grupo4.ui.viewmodel.ClientViewModel
 
 /**
@@ -42,14 +43,7 @@ fun HomeScreen(
     var searchQuery by remember { mutableStateOf("") }
 
     val filteredClients = remember(clients, searchQuery) {
-        if (searchQuery.isBlank()) {
-            clients
-        } else {
-            clients.filter { client ->
-                client.nombre.contains(searchQuery, ignoreCase = true) ||
-                        client.direccion.contains(searchQuery, ignoreCase = true)
-            }
-        }
+        filterClients(clients, searchQuery)
     }
 
     Scaffold(
@@ -231,5 +225,18 @@ fun HomeScreen(
                 }
             }
         }
+    }
+}
+
+/**
+ * Función auxiliar pura para filtrar la lista de clientes por nombre o dirección.
+ */
+fun filterClients(clients: List<ClientModel>, searchQuery: String): List<ClientModel> {
+    if (searchQuery.isBlank()) {
+        return clients
+    }
+    return clients.filter { client ->
+        client.nombre.contains(searchQuery, ignoreCase = true) ||
+                client.direccion.contains(searchQuery, ignoreCase = true)
     }
 }
